@@ -1,5 +1,5 @@
 import pygame
-import player from Player
+from player import Player
 
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
@@ -7,28 +7,29 @@ pygame.init()
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Donkey Kong")
 
+ #create a player instance
+player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+
 #set up the clock for a decent framerate
 clock = pygame.time.Clock()
 
 #game loop
 running = True
+dt = 0.0
 while running:
     #check for events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    #create a player instance
-    player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
-
+   
+    #fill the screen with black
+    screen.fill((0, 0, 0))
     
     player.update(dt) # Pass delta time in seconds
     player.draw(screen)
 
 
-
-    #fill the screen with black
-    screen.fill((0, 0, 0))
 
     #update the display
     pygame.display.flip()
