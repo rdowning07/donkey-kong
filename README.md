@@ -53,7 +53,7 @@ A class is a blueprint. `Player` is a class. Methods are functions that belong t
 
 ---
 
-## Level 2: Asteroids — Technical Milestones
+## Level 2: Donkey Kong — Technical Milestones
 
 ### Architectural Patterns
 
@@ -78,14 +78,13 @@ In progress
 
 * Pygame window opens and closes cleanly
 * Game loop runs at 60fps with delta time
-* Player renders as a white triangle at screen center
+* Player renders as a white rectangle
 * Player is effected by gravity
 ---
 
 ## How to Run
 
 ```
-pyenv shell 3.11.9
 python main.py
 ```
 

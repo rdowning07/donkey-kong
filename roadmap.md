@@ -29,7 +29,7 @@ Repo: https://github.com/rdowning07/pong
 
 ---
 
-## 🟡 LEVEL 2: Asteroids — In Progress
+## ✅ LEVEL 2: Asteroids — Complete
 
 ### What You're Really Learning
 
@@ -65,7 +65,7 @@ Playable Asteroids. Ship rotates and thrusts, shoots bullets, asteroids split on
 
 ---
 
-## 🔴 LEVEL 3: Donkey Kong — Not Started
+## 🟡 LEVEL 3: Donkey Kong — In Progress
 
 Gravity, platforms, enemies with simple AI, tilemaps, sprite loading.
 
