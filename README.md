@@ -80,6 +80,10 @@ In progress
 * Game loop runs at 60fps with delta time
 * Player renders as a white rectangle
 * Player is effected by gravity
+* Created on_ground to suspend gravity
+* Added jump capability
+* Tuned gravity
+  
 ---
 
 ## How to Run

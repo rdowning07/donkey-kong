@@ -69,7 +69,7 @@ Playable Asteroids. Ship rotates and thrusts, shoots bullets, asteroids split on
 
 Gravity, platforms, enemies with simple AI, tilemaps, sprite loading.
 
-- [ ] Gravity and jumping
+- [x] Gravity and jumping
 - [ ] Platform collision
 - [ ] Tilemaps
 - [ ] Sprite loading
