@@ -16,7 +16,7 @@ class Player:
         self.y += self.velocity_y * dt
 
         if self.y > SCREEN_HEIGHT:
-            self.y = SCREEN_HEIGHT
+            self.y = SCREEN_HEIGHT - self.size
             self.velocity_y = 0.0
     
     def draw(self, screen):
