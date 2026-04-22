@@ -1,4 +1,5 @@
 import pygame
+import player from Player
 
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
@@ -16,6 +17,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    #create a player instance
+    player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+
+    
+    player.update(dt) # Pass delta time in seconds
+    player.draw(screen)
 
 
 

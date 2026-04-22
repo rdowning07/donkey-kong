@@ -1,9 +1,5 @@
 import pygame
-import random
 from constants import GRAVITY, SCREEN_WIDTH, SCREEN_HEIGHT
-#__init__: position x, y, size 20, velocity_x = 0.0, velocity_y = 0.0
-# update(self, dt): apply gravity to velocity_y, then apply velocity to position, then floor check — if the player goes below SCREEN_HEIGHT, clamp y to SCREEN_HEIGHT and zero out velocity_y
-# draw(self, screen): draw a white rectangle using pygame.draw.rect
 
 ASTEROID_SPEED = 100
 
