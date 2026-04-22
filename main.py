@@ -22,6 +22,10 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    if running == True:
+         keys = pygame.key.get_pressed()
+         if keys[pygame.K_SPACE]:
+             player.jump()
    
     #fill the screen with black
     screen.fill((0, 0, 0))
