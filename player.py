@@ -1,5 +1,5 @@
 import pygame
-from constants import GRAVITY, SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import GRAVITY, JUMP_SPEED, SCREEN_WIDTH, SCREEN_HEIGHT
 
 class Player:
     def __init__(self, x, y):
@@ -22,6 +22,7 @@ class Player:
         if self.y > SCREEN_HEIGHT:
             self.y = SCREEN_HEIGHT - self.size
             self.velocity_y = 0.0
+            self.on_ground = True
 
     def jump(self):
         if self.on_ground:
