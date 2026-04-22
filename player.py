@@ -1,14 +1,11 @@
 import pygame
 from constants import GRAVITY, SCREEN_WIDTH, SCREEN_HEIGHT
 
-ASTEROID_SPEED = 100
-
-class Asteroid:
-    def __init__(self, x, y, radius):
+class Player:
+    def __init__(self, x, y):
         self.x = x
         self.y = y
         self.size = 20
-        self.radius = radius
 
         self.velocity_x = 0.0
         self.velocity_y = 0.0
