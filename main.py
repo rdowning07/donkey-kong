@@ -32,14 +32,19 @@ while running:
          keys = pygame.key.get_pressed()
          if keys[pygame.K_SPACE]:
              player.jump()
+
+    player.check_platform_collision(platform1)
+    player.check_platform_collision(platform2)
+    player.check_platform_collision(platform3)
    
     #fill the screen with black
     screen.fill((0, 0, 0))
     
     player.update(dt) # Pass delta time in seconds
     player.draw(screen)
-    platform.draw(screen)
-
+    platform1.draw(screen)
+    platform2.draw(screen)
+    platform3.draw(screen)
 
     #update the display
     pygame.display.flip()
