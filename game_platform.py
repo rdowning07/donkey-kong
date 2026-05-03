@@ -1,5 +1,5 @@
 import pygame
-from constants import GRAVITY, JUMP_SPEED, SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import GRAVITY, JUMP_SPEED
 
 # Checks: Is the player's bottom (y + size) inside the platform's top (platform.y) to bottom (platform.y + platform.height)?
 #Is the player horizontally overlapping the platform?

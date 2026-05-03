@@ -12,9 +12,9 @@ pygame.display.set_caption("Donkey Kong")
 player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
 
 #create 3 platform instances
-platform1 = Platform(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2 + 50, 100, 20)
-platform2 = Platform(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2 - 50, 100, 20)
-platform3 = Platform(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2, 100, 20)
+platform1 = Platform(100, 450, 200, 20)
+platform2 = Platform(350, 350, 200, 20)
+platform3 = Platform(500, 250, 200, 20)
 
 #set up the clock for a decent framerate
 clock = pygame.time.Clock()
@@ -33,6 +33,9 @@ while running:
          if keys[pygame.K_SPACE]:
              player.jump()
 
+    
+    player.update(dt) # Pass delta time in seconds
+    
     player.check_platform_collision(platform1)
     player.check_platform_collision(platform2)
     player.check_platform_collision(platform3)
@@ -40,7 +43,7 @@ while running:
     #fill the screen with black
     screen.fill((0, 0, 0))
     
-    player.update(dt) # Pass delta time in seconds
+   
     player.draw(screen)
     platform1.draw(screen)
     platform2.draw(screen)
