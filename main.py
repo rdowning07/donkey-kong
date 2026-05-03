@@ -1,6 +1,6 @@
 import pygame
 from player import Player
-from platform import Platform
+from game_platform import Platform
 
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
