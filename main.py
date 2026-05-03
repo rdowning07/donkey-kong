@@ -1,5 +1,6 @@
 import pygame
 from player import Player
+from platform import Platform
 
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
@@ -9,6 +10,11 @@ pygame.display.set_caption("Donkey Kong")
 
  #create a player instance
 player = Player(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
+
+#create 3 platform instances
+platform1 = Platform(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2 + 50, 100, 20)
+platform2 = Platform(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2 - 50, 100, 20)
+platform3 = Platform(SCREEN_WIDTH // 2 - 50, SCREEN_HEIGHT // 2, 100, 20)
 
 #set up the clock for a decent framerate
 clock = pygame.time.Clock()
@@ -32,7 +38,7 @@ while running:
     
     player.update(dt) # Pass delta time in seconds
     player.draw(screen)
-
+    platform.draw(screen)
 
 
     #update the display
