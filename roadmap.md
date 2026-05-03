@@ -1,4 +1,4 @@
-# 🎮 Asteroids Curriculum Roadmap
+# 🎮 Curriculum roadmap
 
 **Goal:** First-principles game development mastery through progressive building.
 **Language:** Python + Pygame → C++ (later)
@@ -69,8 +69,10 @@ Playable Asteroids. Ship rotates and thrusts, shoots bullets, asteroids split on
 
 Gravity, platforms, enemies with simple AI, tilemaps, sprite loading.
 
+**Platform collision:** Basic top landing (`Player.check_platform_collision`, three platforms in `main.py`). Further polish (update vs collision order, clearing `on_ground` each frame, stricter “from above” tests) is still in progress.
+
 - [x] Gravity and jumping
-- [ ] Platform collision
+- [x] Platform collision (basic top landing; polish TBD)
 - [ ] Tilemaps
 - [ ] Sprite loading
 - [ ] Simple enemy AI

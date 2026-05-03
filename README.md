@@ -17,26 +17,31 @@ The goal is first-principles understanding: knowing not just what the code does,
 
 ### `main.py`
 
-The game entry point. Initializes pygame, creates the window, runs the game loop. Contains collision detection functions, game state management, and score tracking.
+The game entry point. Initializes Pygame, creates the window, runs the main loop (input, platform collision checks, `player.update`, draw, flip display, delta time). There is no score yet; collision handling lives on the `Player` class.
 
 ### `player.py`
 
-The player. A rectangle drawn with `pygame.draw.rect()`. Will eventually jump.
+The player: position, velocity, `on_ground`, gravity, floor clamp, **jump** (`jump()` when grounded), and **basic platform landing** via `check_platform_collision(platform)` (top-only style checks). Rendered as a white rectangle with `pygame.draw.rect()`.
+
+### `game_platform.py`
+
+The `Platform` class: rectangle with `x`, `y`, `width`, `height`, and `draw()`. The file is named `game_platform.py` so it does not shadow Python’s standard library module `platform` (which Pygame and other tools import).
 
 ### `constants.py`
 
-Shared constants for screen dimensions, gravity, and score values.
+Shared values: `SCREEN_WIDTH`, `SCREEN_HEIGHT`, `GRAVITY`, `JUMP_SPEED`.
 
 **The game loop**
 
 ```
 while running:
-    handle input      ← quit, keypresses
-    update state      ← gravity, jumps
+    handle input      ← quit, keypresses (e.g. jump)
+    platform checks   ← land on top of platforms (see code order)
     screen.fill()     ← wipe canvas black
-    draw everything   ← player, platform, enemies
+    update state      ← gravity, movement, floor
+    draw everything   ← player, platforms
     display.flip()    ← swap back buffer to screen
-    dt = clock.tick() ← cap at 60fps, calculate delta time
+    dt = clock.tick() ← cap at 60fps, delta time in seconds
 ```
 
 ---
@@ -49,11 +54,11 @@ Movement is determined by constant gravity. Platforms and jumps are manipulation
 
 ### Classes
 
-A class is a blueprint. `Player` is a class. Methods are functions that belong to a class and operate on its data via `self`.
+A class is a blueprint. `Player` and `Platform` are classes. Methods are functions that belong to a class and operate on its data via `self`.
 
 ---
 
-## Level 2: Donkey Kong — Technical Milestones
+## Level 3: Donkey Kong — Technical Milestones
 
 ### Architectural Patterns
 
@@ -65,8 +70,9 @@ In progress
 
 ### Physics
 
-**Gravity:** Set as a constant using `self.velocity_y += GRAVITY * dt`
+**Gravity:** `self.velocity_y += GRAVITY * dt` when not grounded.
 
+**Platforms:** Rectangles the player can land on; landing logic is the same idea as the floor (clamp position, zero downward velocity, set `on_ground`).
 
 ### Systems & UI
 
@@ -79,18 +85,23 @@ In progress
 * Pygame window opens and closes cleanly
 * Game loop runs at 60fps with delta time
 * Player renders as a white rectangle
-* Player is effected by gravity
-* Created on_ground to suspend gravity
-* Added jump capability
-* Tuned gravity
-  
+* Gravity, floor collision, and `on_ground`
+* Jump when grounded (space)
+* Three green `Platform` instances; basic **land on top** collision (sides not handled yet)
+* No score, enemies, tilemap, or sprites yet
+
 ---
 
 ## How to Run
 
+From the project root (this folder), using the same Python you use for development (for example pyenv’s `donkey-kong` environment):
+
+```bash
+cd /path/to/donkey-kong
+python3 main.py
 ```
-python main.py
-```
+
+If the IDE **Run** button uses a different working directory or interpreter than your terminal, behavior can differ (imports, Pygame, pyenv). When in doubt, run with `python3 main.py` from the repo root.
 
 ---
 
