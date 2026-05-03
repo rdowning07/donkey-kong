@@ -29,6 +29,16 @@ class Player:
             self.velocity_y = -JUMP_SPEED
             self.on_ground = False
     
+    def check_platform_collision(self, platform):
+        if (self.y + self.size > platform.y and
+            self.y < platform.y + platform.height and
+            self.x + self.size > platform.x and
+            self.x < platform.x + platform.width and
+            self.velocity_y > 0):
+            self.y = platform.y - self.size
+            self.velocity_y = 0.0
+            self.on_ground = True
+
     def draw(self, screen):
         pygame.draw.rect(screen, (255, 255, 255), (self.x, self.y, self.size, self.size))
         
