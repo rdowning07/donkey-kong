@@ -28,12 +28,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-         keys = pygame.key.get_pressed()
-         if keys[pygame.K_SPACE]:
-             player.jump()
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_SPACE]:
+        player.jump()
 
-    
-    player.update(dt) # Pass delta time in seconds
+    player.update(dt)  # Pass delta time in seconds
     
     player.check_platform_collision(platform1)
     player.check_platform_collision(platform2)
