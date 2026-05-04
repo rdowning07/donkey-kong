@@ -12,6 +12,7 @@ class Player:
         self.on_ground = False
 
     def update(self, dt):
+        self.on_ground = False
         if self.on_ground:
             self.velocity_y = 0.0
         else:
