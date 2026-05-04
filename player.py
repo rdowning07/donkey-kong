@@ -24,6 +24,9 @@ class Player:
             self.velocity_y = 0.0
             self.on_ground = True
 
+    def move(self, direction):
+        self.velocity_x = direction * 200
+
     def jump(self):
         if self.on_ground:
             self.velocity_y = -JUMP_SPEED
