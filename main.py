@@ -31,6 +31,12 @@ while running:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_SPACE]:
         player.jump()
+    elif keys[pygame.K_LEFT]:
+        player.move(-1)
+    elif keys[pygame.K_RIGHT]:
+        player.move(1)
+    else:
+        player.move(0)
 
     player.update(dt)  # Pass delta time in seconds
     
